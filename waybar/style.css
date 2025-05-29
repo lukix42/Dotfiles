@@ -1,0 +1,94 @@
+@import "frappe.css";
+
+* {
+  border: none;
+  border-radius: 0;
+  font-family: "Source Sans Pro", "FontAwesome 6 Free";
+  font-size: 17px;
+  box-shadow: none;
+  text-shadow: none;
+  transition-duration: 0s;
+  margin: 2px;
+}
+
+window#waybar {
+  color: @text;
+  background-color: @crust;
+  border-bottom: 2px solid @teal;
+}
+
+#workspaces {
+  margin: 0 5px;
+}
+
+#custom-scratchpad {
+  margin: 0px 5px;
+  padding: 0px 5px;
+}
+
+#workspaces button {
+  padding: 0 5px;
+  color: @teal;
+}
+
+#workspaces button.focused {
+  color: rgba(115, 186, 37, 1);
+}
+
+#workspaces button.visible {
+  color: @green;
+}
+
+#workspaces button.urgent {
+  color: rgba(33, 164, 223, 1);
+}
+
+#battery,
+#cpu,
+#memory,
+#disk,
+#network,
+#bluetooth,
+#pulseaudio,
+#idle_inhibitor {
+  margin: 0px 10px 0px 10px;
+}
+#temperature.cpu,
+#temperature.gpu,
+#backlight {
+  margin: 0px 6px 0px 10px;
+  /*    min-width: 30px;*/
+}
+
+#clock {
+  margin: 0px 6px 0px 10px;
+  color: @peach;
+}
+
+#battery.warning {
+  color: @yellow;
+}
+
+#battery.critical {
+  color: @red;
+}
+
+#battery.charging {
+  color: rgba(217, 216, 216, 1);
+}
+
+#bluetooth.disabled {
+  color: @red;
+}
+
+#bluetooth.off {
+  color: @text;
+}
+
+#bluetooth.connected {
+  color: @green;
+}
+
+#tray {
+  margin: 0px 10px 0px 0px;
+}

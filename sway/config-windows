@@ -1,0 +1,13 @@
+for_window [title="Clocks"] floating enable
+for_window [title="Calculator"] floating enable
+for_window [app_id="nm-connection-editor"] floating enable
+for_window [app_id="(pavucontrol|psensor)"] floating enable
+for_window [app_id="firefox" title="Pushbullet"] floating enable
+for_window [app_id="firefox" title="Firefox — Sharing Indicator"] floating enable
+for_window [app_id="firefox" title="Picture-in-Picture"] floating enable
+for_window [app_id="firefox" title="Pushbullet – Mozilla Firefox"] floating enable
+for_window [app_id="firefox" title="About Mozilla Firefox"] floating enable
+
+workspace 1 output DP-1
+
+workspace 7 output DP-2
