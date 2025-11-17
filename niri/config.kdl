@@ -126,7 +126,6 @@ layout {
 }
 
 spawn-at-startup "waybar"
-spawn-at-startup "mako"
 spawn-at-startup "firefox"
 spawn-at-startup "gnome-keyring"
 spawn-at-startup "lxpolkit"
