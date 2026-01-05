@@ -4,7 +4,7 @@ local wezterm = require("wezterm")
 local config = {}
 
 -- color scheme
-config.color_scheme = "Catppuccin Frappe"
+config.color_scheme = "Catppuccin Mocha"
 
 -- font settings
 config.font = wezterm.font({
