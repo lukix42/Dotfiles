@@ -1,11 +1,10 @@
 [modules]
 left = ["Workspaces"]
-center = ["WindowTitle"]
+center = ["WindowTitle", "MediaPlayer"]
 right = [
   "SystemInfo",
   [
     "Tray",
-    "MediaPlayer",
     "Clock",
     "Privacy",
     "Settings",
@@ -23,7 +22,7 @@ enable_workspace_filling = false
 format = "%a %d %b, %H:%M:%S"
 
 [system_info]
-indicators = ["Cpu", "Memory", "Temperature", "IpAddress"]
+indicators = ["Cpu", "Memory", "Temperature"]
 
 [system_info.cpu]
 warn_threshold = 60
