@@ -1,4 +1,4 @@
-environment {
+    environment {
     QT_QPA_PLATFORM "wayland"
     DESKTOP "niri"
 }
@@ -14,7 +14,7 @@ overview {
 input {
     keyboard {
         xkb {
-            layout "us"
+                layout "ch"
         }
     }
 
@@ -71,7 +71,7 @@ output "DP-2" {
 }
 
 layout {
-    gaps 16
+    gaps 6
     center-focused-column "never"
     preset-column-widths {
         proportion 0.33333
@@ -83,7 +83,7 @@ layout {
     default-column-width { proportion 0.5; }
 
     focus-ring {
-        width 4
+        width 3
         active-color "#7fc8ff"
         inactive-color "#505050"
         active-gradient from="#80c8ff" to="#c7ff7f" angle=45
@@ -93,7 +93,7 @@ layout {
     border {
         off
 
-        width 4
+        width 3
         active-color "#ffc87f"
         inactive-color "#505050"
         urgent-color "#9b0000"
@@ -125,14 +125,12 @@ layout {
     }
 }
 
-// spawn-at-startup "waybar"
 spawn-at-startup "firefox"
 spawn-at-startup "gnome-keyring"
 spawn-at-startup "lxpolkit"
 spawn-at-startup "nm-applet"
 spawn-at-startup "blueman-applet"
-// spawn-at-startup "ironbar"
-spawn-at-startup "swaync"
+spawn-at-startup "mako"
 spawn-at-startup "ashell"
 
 hotkey-overlay {
@@ -141,11 +139,52 @@ hotkey-overlay {
 }
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 animations {
-    // Uncomment to turn off all animations.
-    // off
+    workspace-switch {
+        spring damping-ratio=1.0 stiffness=1000 epsilon=0.0001
+    }
 
-    // Slow down all animations by this factor. Values below 1 speed them up instead.
-    // slowdown 3.0
+    window-open {
+        duration-ms 150
+        curve "ease-out-expo"
+    }
+
+    window-close {
+        duration-ms 150
+        curve "ease-out-quad"
+    }
+
+    horizontal-view-movement {
+        spring damping-ratio=1.0 stiffness=800 epsilon=0.0001
+    }
+
+    window-movement {
+        spring damping-ratio=1.0 stiffness=800 epsilon=0.0001
+    }
+
+    window-resize {
+        spring damping-ratio=1.0 stiffness=800 epsilon=0.0001
+    }
+
+    config-notification-open-close {
+        spring damping-ratio=0.6 stiffness=1000 epsilon=0.001
+    }
+
+    exit-confirmation-open-close {
+        spring damping-ratio=0.6 stiffness=500 epsilon=0.01
+    }
+
+    screenshot-ui-open {
+        duration-ms 200
+        curve "ease-out-quad"
+    }
+
+    overview-open-close {
+        spring damping-ratio=1.0 stiffness=800 epsilon=0.0001
+    }
+
+    recent-windows-close {
+        spring damping-ratio=1.0 stiffness=800 epsilon=0.001
+    }
 }
 
 window-rule {
@@ -161,7 +200,7 @@ window-rule {
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
 window-rule {
-    geometry-corner-radius 12
+    geometry-corner-radius 6
     clip-to-geometry true
 }
 
@@ -191,8 +230,8 @@ binds {
     XF86AudioPrev        allow-when-locked=true { spawn-sh "playerctl previous"; }
     XF86AudioNext        allow-when-locked=true { spawn-sh "playerctl next"; }
 
-    XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+10%"; }
-    XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
+    XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+5%"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "5%-"; }
 
     Mod+O repeat=false { toggle-overview; }
 
@@ -331,11 +370,11 @@ binds {
     // Center all fully visible columns on screen.
     Mod+Ctrl+C { center-visible-columns; }
 
-    Mod+Minus { set-column-width "-10%"; }
-    Mod+Equal { set-column-width "+10%"; }
+    Mod+Minus { set-column-width "-5%"; }
+    Mod+Equal { set-column-width "+5%"; }
 
     // Finer height adjustments when in column with other windows.
-    Mod+Shift+Minus { set-window-height "-10%"; }
+    Mod+Shift+Minus { set-window-height "-5%"; }
     Mod+Shift+Equal { set-window-height "+10%"; }
 
     // Move the focused window between the floating and the tiling layout.

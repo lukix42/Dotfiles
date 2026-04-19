@@ -1,18 +1,7 @@
 [modules]
 left = ["Workspaces"]
 center = []
-right = [
-  "SystemInfo",
-  [
-    "Privacy",
-    "Tray",
-    "Tempo",
-    "Settings",
-  ],
-  [
-    "CustomNotifications",
-  ],
-]
+right = ["Tray", "SystemInfo", ["Privacy", "Tempo", "Settings"]]
 
 [workspaces]
 visibility_mode = "MonitorSpecific"
@@ -36,14 +25,6 @@ alert_threshold = 85
 [system_info.disk]
 warn_threshold = 80
 alert_threshold = 90
-
-[[CustomModule]]
-name = "CustomNotifications"
-icon = ""
-command = "swaync-client -t -sw"
-listen_cmd = "swaync-client -swb"
-icons.'dnd.*' = ""
-alert = ".*notification"
 
 [settings]
 lock_cmd = "playerctl --all-players pause; nixGL hyprlock &"
