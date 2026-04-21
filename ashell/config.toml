@@ -1,7 +1,28 @@
 [modules]
 left = ["Workspaces"]
 center = []
-right = ["Tray", "SystemInfo", ["Privacy", "Tempo", "Settings"]]
+right = [
+  "Tray",
+  "SystemInfo",
+  [
+    "Privacy",
+    "Tempo",
+    "Settings",
+  ],
+  "Notifications",
+]
+
+[notifications]
+format = "%m/%d %H:%M"
+show_timestamps = true
+show_bodies = false
+grouped = true
+toast = true
+toast_position = "top_right"
+toast_timeout = 4000
+toast_limit = 5
+toast_max_height = 150
+blocklist = ["blueman", "^org\\.gnome\\."]
 
 [workspaces]
 visibility_mode = "MonitorSpecific"
