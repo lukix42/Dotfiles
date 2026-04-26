@@ -14,7 +14,8 @@ overview {
 input {
     keyboard {
         xkb {
-                layout "ch"
+            layout "us"
+            variant "intl"
         }
     }
 
